@@ -6,12 +6,14 @@ L'objectif du projet est de créer le jeu du pendu en C++ en __programmation ori
 _____________________________________________________
 
 ## Contenu du repository
+`Hangman.exe` : Fichier executable du jeu  
+
 `main.cpp` : code principal  
 `hangman.h` : définition de la classe _Hangman_  
 `hangman.cpp` : déclaration des méthodes de la classe _Hangman_  
 
 ## Instructions pour la compilation
-⇨ __Il faut au préalable télécharger la librairie PDCurses sur sa machine__
+⇨ __Il faut au préalable télécharger la librairie PDCurses (ou Ncurses) sur sa machine__
 
 * Compilation sous Code::Blocks :  
 1) Déplacer la librairie PDCurses à l'emplacement : 
@@ -36,14 +38,14 @@ _____________________________________________________
 
 ## Évolution du projet
 Objectifs principaux :  
--> Se familiariser avec PDCurses
--> Coder le jeu du pendu pour un mot caché fixé (juste affichage des lettres)
--> Coder la GUI (dessin du bonhomme et nombre de vie)
+- Se familiariser avec PDCurses
+- Coder le jeu du pendu pour un mot caché fixé (juste affichage des lettres)
+- Coder la GUI (dessin du bonhomme et nombre de vie)
 
 Puis rajout de règles et de fonctionnalités :
--> Rajout de l'affichage des lettres demandées
--> Affichage d'une erreur si le joueur demande une lettre déjà demandée
--> Demander un mot à faire deviner à l'utilisateur
+- Rajout de l'affichage des lettres demandées
+- Affichage d'une erreur si le joueur demande une lettre déjà demandée
+- Demander un mot à faire deviner à l'utilisateur
 
 ## Sources
 * [NCURSES](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/)
