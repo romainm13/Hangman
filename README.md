@@ -15,14 +15,21 @@ _____________________________________________________
 ## Instructions pour la compilation
 ⇨ __Il faut au préalable télécharger la librairie PDCurses (ou Ncurses) sur sa machine__
 
-* Compilation sous Code::Blocks :  
-1) Déplacer la librairie PDCurses à l'emplacement : 
+* Pour Windows sous Code::Blocks :
+1) Télécharger [PDCurses](https://sourceforge.net/projects/pdcurses/)
+2) Déplacer la librairie PDCurses à l'emplacement : 
 _C:\Program Files\CodeBlocks\MinGW\PDCurses_
-2) Lier la librairie au compilateur de Code::Blocks :  
+3) Lier la librairie au compilateur de Code::Blocks :  
 <img src="Tuto_PDCurses1.png" alt="drawing" width="450"/>  \, <img src="Tuto_PDCurses2.png" alt="drawing" width="450"/>
 
-* Compilation usuelle  
-Il faut appeler la librairie PDCurses ou NCURSES selon votre distribution et la librairie que vous avez installée.  
+* Windows avec MinGW dans la console:
+1) Rajouter g++ dans le PATH
+2) Importer `curses.h`(dans \PDCurses), `pdcurses.a`(dans \PDCurses\wincon) et le dossier `wincon`(dans \PDCurses) dans le dossier du projet __Hangman__
+3) Compilation sous MinGW : `g++ -I"chemin_du_dossier 
+
+* Linux et Mac : 
+1) Télécharger [NCURSES](https://invisible-island.net/ncurses/)
+2) Résussir à intégrer `curses.h` pendant votre compilation
 
 ## Comment jouer ?
 - Exécuter le programme
@@ -48,6 +55,9 @@ Puis rajout de règles et de fonctionnalités :
 - Demander un mot à faire deviner à l'utilisateur
 
 ## Sources
-* [NCURSES](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/)
+* [Téléchargement PDCurses](https://sourceforge.net/projects/pdcurses/)
+* [Tuto NCURSES](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/)
 * [CppReference std::vector](https://en.cppreference.com/w/cpp/container/vector)
 * [CppReference std::find](https://en.cppreference.com/w/cpp/algorithm/find)
+* [CppReference std::uniform_int_distribution](https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution)
+* [CppReference std::random_device](https://en.cppreference.com/w/cpp/numeric/random/random_device)
