@@ -5,7 +5,18 @@ int main()
     Hangman game;
     game.LaunchGame();
 
-    game.choose_word(); //choosing the word to guess + letters to find
+    //Choosing 1 or 2 players
+    game.print_action("One player : o // Two player : t");
+    char ch = getch();
+    switch(ch){
+        case 'o':
+            game.choose_random__word();
+            break;
+        case 't':
+            game.choose_word(); //choosing the word to guess + letters to find
+            break;
+    }
+
     game.print_action("Let's go ! Choose a letter");
     game.move_cursor();
 
@@ -40,6 +51,7 @@ int main()
     }
     else{
         game.print_action("D E F E A T, press enter to quit");
+        game.print_h_word();
     }
     getch();
     endwin();

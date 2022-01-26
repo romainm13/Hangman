@@ -115,6 +115,47 @@ void Hangman::choose_word(){
     wrefresh(wword);
 }
 
+void Hangman::choose_random__word(){
+    std::vector<std::string> dict;
+    std::string ligne;
+    std::string motHasard;
+    int nombre(0);
+
+    std::ifstream monFlux("frenchssaccent.dic");  //Ouverture d'un fichier en lecture
+
+    if(monFlux){
+        while(getline(monFlux, ligne)){
+        dict.push_back(ligne);
+        }
+        srand(time(0));
+        int random_number = (rand()*10000 % dict.size());
+        motHasard = dict[random_number];
+    }
+    monFlux.close();
+
+    std::vector<char> l_no_double = {};
+    int no_double = 0; //nb letters to find
+
+    for(std::string::size_type i = 0; i < motHasard.length(); ++i)
+    {
+        char ch = motHasard[i];
+        if(std::find(l_no_double.begin(), l_no_double.end(), ch) == l_no_double.end())
+        {
+            l_no_double.push_back(ch);
+            no_double += 1;
+        }
+        h_word.push_back(ch);
+    }
+    letters_to_find = no_double;
+
+    int y_temp = 0;
+    for(int i = 0; i < h_word.size(); i++){
+        mvwprintw(wword,1,17 + y_temp,"%c",'_');
+        y_temp += 2;
+    }
+    wrefresh(wword);
+}
+
 //Print
 void Hangman::print_action(char * action) const{
     wclear(waction);
@@ -133,6 +174,15 @@ void Hangman::print_letters(char ch) const{
     compt += 2;
     }
 }
+
+void Hangman::print_h_word() const{
+    int compt = 0;
+    for(std::vector<char>::size_type i = 0; i != h_word.size(); i++){
+        mvwprintw(wword,1, 17+compt,"%c",h_word[i]);
+        compt += 2;
+    }
+    wrefresh(wword);
+    }
 
 void Hangman::print_lifes() const{
     mvprintw(4, 1,"Lifes : x %d ",n_lifes);

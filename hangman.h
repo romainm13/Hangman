@@ -4,8 +4,11 @@
 #include <stdlib.h>
 #include <iostream>
 #include <curses.h>
-#include <string.h>
+#include <string>
+#include <fstream>
 #include <vector>
+#include <ctime>
+#include <cstdlib>
 #include <algorithm> //pour std::find
 
 class Hangman
@@ -32,17 +35,19 @@ public:
     int word_found() const;
     int still_alive() const;
     void choose_word();
+    void choose_random__word();
 
     //Print
     void print_action(char * action) const;
     void print_letters(char ch) const;
     void print_lifes() const;
+    void print_h_word() const;
 
     //Drawing the Hangman
     void drawing();
 
 private:
-    std::vector<char> h_word = {};
+    std::vector<char> h_word ={} ;
     int letters_to_find;
     std::vector<char> l_asked = {};
 
