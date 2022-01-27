@@ -10,7 +10,7 @@ void Hangman::LaunchGame(){
 
 
     //TITLE
-    char * title = "# Hangman Game #";
+    const char * title = "# Hangman Game #";
     mvprintw(1,(COLS-38),title); //Move cursor, write, let it at the end !
     /*getyx(stdscr,y,x);
     mvprintw(1,15,"After title : %d %d",x,y);
