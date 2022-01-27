@@ -38,7 +38,7 @@ _C:\Program Files\CodeBlocks\MinGW\PDCurses_
 
 * Linux et Mac : 
 1) Télécharger [NCURSES](https://invisible-island.net/ncurses/)
-2) S'inspirer de la section ci-dessus
+2) Lir la librairie NCURSES éxecuter : g++ hangman.cpp main.cpp -lncurses
 
 ## Comment jouer ?
 - Exécuter le programme
