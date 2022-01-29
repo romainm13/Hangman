@@ -31,14 +31,17 @@ _C:\Program Files\CodeBlocks\MinGW\PDCurses_
 
 * Windows avec MinGW dans la console:
 1) Télécharger [PDCurses](https://sourceforge.net/projects/pdcurses/)
-2) Télécharger `main.cpp`, `hangman.h`, `hangman.cpp`, `Projet_PDCurses.cbp` et `frenchssaccent.dic` dans un même répertoire __Hangman__
-3) Copier `curses.h` (dans \PDCurses), `pdcurses.a` (dans \PDCurses\wincon) et le dossier `wincon` (dans \PDCurses) dans le dossier du projet __Hangman__
-4) Remplacer `##include <curses.h>` par `##include "curses.h"` dans ` hangman.h` _ligne 6_
-5) Compilation sous MinGW : rajouter g++ de MinGW dans le PATH et executer dans la commande (se placer dans le répertoire __Hangman__) `g++ -I"chemin_du_dossier ???`
+2) Télécharger `main.cpp`, `hangman.h`, `hangman.cpp` et `frenchssaccent.dic` dans un même répertoire __Hangman__
+3) Créer un dossier __include__ dans lequel mettre `hangman.h` et les fichiers de la librairie PDCURSES `pannel.h`, `curses.h` et `curspriv.h`
+4) Copier coller le dossier __wincon__ de la librairie PDCURSES dans __Hangman__
+5) Dans le dossier __wincon__ excécuter la commande `make -f Makefile WIDE=Y DLL=Y` => crée la librairie statique `pdcurses.a` et `pdcurses.dll`
+6) Copier coller `pdcurses.a` et `pdcurses.dll` dans __Hangman__
+7) Exécuter dans __Hangman__ : g++ -o Hangman_game main.cpp hangman.cpp -I"path\Hangman\include" -L"path\Hangman\wincon" -lpdcurses
+8) `Hangman_game.exe` est créé dans __Hangman__
 
 * Linux et Mac : 
 1) Télécharger [NCURSES](https://invisible-island.net/ncurses/)
-2) Lir la librairie NCURSES éxecuter : g++ hangman.cpp main.cpp -lncurses
+2) La documentation en ligne est plus simple pour lier NCURSES (s'inspirer de la section ci-dessus si besoin)
 
 ## Comment jouer ?
 - Exécuter le programme
